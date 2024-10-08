@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import styles from "./index.module.css";
 import { News } from "@/app/_libs/microcms";
 import { CategoryView } from "@/app/_components/category";
@@ -16,7 +17,7 @@ export const NewsList = ({ news }: Props) => {
     <ul>
       {news.map((article) => (
         <li key={article.id} className={styles.item}>
-          <div className={styles.link}>
+          <Link href={"/news/${article.id}"} className={styles.link}>
             <Image
               className={styles.image}
               src="/no-image.png"
@@ -31,7 +32,7 @@ export const NewsList = ({ news }: Props) => {
                 <Date date={article.publishedAt ?? article.createdAt} />
               </dd>
             </dl>
-          </div>
+          </Link>
         </li>
       ))}
     </ul>
