@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import styles from "./index.module.css";
 import { News } from "@/app/_libs/microcms";
-import { CategoryView } from "@/app/_components/category";
+import { CategoryView } from "@/app/_components/Category";
 import { Date } from "@/app/_components/Date";
 
 type Props = {
@@ -17,7 +17,7 @@ export const NewsList = ({ news }: Props) => {
     <ul>
       {news.map((article) => (
         <li key={article.id} className={styles.item}>
-          <Link href={"/news/${article.id}"} className={styles.link}>
+          <Link href={`/news/${article.id}`} className={styles.link}>
             {article.thumbnail ? (
               <Image
                 className={styles.image}
