@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import styles from "./index.module.css";
 import { News } from "@/app/_libs/microcms";
-import { CategoryView } from "@/app/_components/Category";
+import { CategoryView } from "@/app/_components/CategoryView";
 import { Date } from "@/app/_components/Date";
 
 type Props = {
