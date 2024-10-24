@@ -1,7 +1,7 @@
 import Image from "next/image";
 import type { News } from "@/app/_libs/microcms";
 import { Date } from "../Date";
-import { CategoryView } from "../Category";
+import { CategoryView } from "@/app/_components/Category";
 import styles from "./index.module.css";
 import Link from "next/link";
 
