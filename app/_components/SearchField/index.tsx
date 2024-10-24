@@ -5,7 +5,7 @@ import styles from "./index.module.css";
 import { useRouter, useSearchParams } from "next/navigation";
 import { Suspense } from "react";
 
-export default function SearchField() {
+function SearchFieldComponent() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
@@ -18,25 +18,31 @@ export default function SearchField() {
     }
   };
   return (
+    <form onSubmit={handleSubmit} className={styles.form}>
+      <label className={styles.search}>
+        <Image
+          src="/search.svg"
+          alt="検索"
+          width={16}
+          height={16}
+          loading="eager"
+        />
+        <input
+          type="text"
+          name="q"
+          placeholder="キーワードを入力"
+          defaultValue={searchParams.get("q") ?? undefined}
+          className={styles.searchInput}
+        />
+      </label>
+    </form>
+  );
+}
+
+export default function SearchField() {
+  return (
     <Suspense>
-      <form onSubmit={handleSubmit} className={styles.form}>
-        <label className={styles.search}>
-          <Image
-            src="/search.svg"
-            alt="検索"
-            width={16}
-            height={16}
-            loading="eager"
-          />
-          <input
-            type="text"
-            name="q"
-            placeholder="キーワードを入力"
-            defaultValue={searchParams.get("q") ?? undefined}
-            className={styles.searchInput}
-          />
-        </label>
-      </form>
+      <SearchFieldComponent />
     </Suspense>
   );
 }
