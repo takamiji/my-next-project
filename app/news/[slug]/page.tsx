@@ -5,6 +5,8 @@ import { ButtonLink } from "@/app/_components/ButtonLink";
 import styles from "./page.module.css";
 import { notFound } from "next/navigation";
 
+export const revalidate = 0;
+
 type Props = {
   params: {
     slug: string;
