@@ -6,6 +6,8 @@ import { News } from "@/app/_libs/microcms";
 import { getNewsList } from "@/app/_libs/microcms";
 import { TOP_NEWS_LIMIT } from "./_constants";
 
+export const revalidate = 60;
+
 export default async function Home() {
   // JavaScriptの定数や式などを書くことができる
   // HTMLのようなマークアップを書くことができる
